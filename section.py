@@ -43,23 +43,60 @@ model = genai.GenerativeModel(model_name="gemini-pro", generation_config=generat
 
 # Navbar
 st.set_page_config(
-    page_title="Blog Section",
-    page_icon="📝",
+    page_title="Section Generator",
+    page_icon="🚀",
     layout="centered",
     initial_sidebar_state="collapsed",
 )
 
-# title of our app
-st.title('✍️ Farhan BlogGPT')
+# Add the Title
+st.markdown(
+    "<h1 style='text-align: center; color: black;'>"
+    "✨ AI Blog Section Generator"
+    "</h1>",
+    unsafe_allow_html=True
+)
+
+#st.title('✨ AI Blog Section Generator')
 
 # create a subheader
-st.subheader("AI Blog Section Generator 🤖")
+st.markdown('''
+<style>
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    line-height: 0px;
+    margin-top: 0;
+    margin-bottom: 24px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+</style>
+<h3 style="color: black;">Spark Your Blogging Brilliance with a Few Clicks!💥</h3>
+''', unsafe_allow_html=True)
 
 # sidebar for the user input
 
 with st.sidebar:
+    st.markdown(
+        "<style>h1 {text-align: center;}</style>",
+        unsafe_allow_html=True
+    )
+    st.markdown(
+        "<style>h1 {text-align: center; color: black;}</style>",
+        unsafe_allow_html=True
+    )
     st.title("Input Settings")
-    st.subheader("Enter Details for the Section")
+
+    st.markdown(
+        "<style>"
+        "h4 {text-align: left; color: black; margin-top: 4px;}"
+        "p {text-align: left; color: black;}"
+        "</style>",
+        unsafe_allow_html=True
+    )
+    st.markdown("<h4>Enter Details for the Section: </h4>", unsafe_allow_html=True)
     
     # Section Heading
     section_heading = st.text_input("Section Heading ")
