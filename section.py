@@ -113,18 +113,64 @@ with st.sidebar:
     # Submit Button
     submit_button = st.button("Generate")
 
-    # Clear All Button
-    clear_button = st.button("Clear All")
-
 if submit_button:
     # Display the spinner
+    with st.spinner("Converting desired input to prompt..."):
         # Generate the response
         response = model.generate_content(prompt_parts)
-
-        # Display the blog output
+        # Write results
         st.write(response.text)
 
+    # Add styling to the generated text
+    st.markdown('''
+        <style>
+            p {
+                font-family: 'Open Sans', sans-serif;
+                font-size: 16px;
+                line-height: 24px;
+                margin-top: 0;
+                margin-bottom: 24px;
+            }
+            strong {
+                font-weight: 600;
+            }
+            em {
+                font-style: italic;
+            }
+            code {
+                background-color: #f5f5f5;
+                border-radius: 3px;
+                display: inline-block;
+                font-family: 'Menlo', monospace;
+                font-size: 14px;
+                margin: 0 1px;
+                padding: 2px 4px;
+            }
+        </style>
+    ''', unsafe_allow_html=True)
 
+clear_button = st.sidebar.button("Clear All")
+with st.sidebar:
+    st.markdown('''
+        <style>
+            .element-container .stButton.stBtn {
+                background-color: #ffc107 !important;
+                border-color: #ffc107 !important;
+            }
+        </style>
+    ''', unsafe_allow_html=True)
+
+    if clear_button:
+        for key in st.session_state:
+            if isinstance(st.session_state[key], str) and st.session_state[key] != "":
+                st.session_state[key] = ""
+            elif isinstance(st.session_state[key], list) and st.session_state[key] != []:
+                st.session_state[key] = []
+            elif isinstance(st.session_state[key], dict) and st.session_state[key] != {}:
+                st.session_state[key] = {}
+        
+        
+        
 # Adding the HTML footer
 # Profile footer HTML for sidebar
 
@@ -200,8 +246,6 @@ footer_html = f"""
 # Combine CSS and HTML for the footer
 st.markdown(footer_css, unsafe_allow_html=True)
 st.markdown(footer_html, unsafe_allow_html=True)
-        
-        
         
 
 
