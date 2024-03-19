@@ -155,7 +155,7 @@ with st.sidebar:
 
 if submit_button:
     # Display the spinner
-    with st.spinner("Generating..."):
+    with st.spinner("Generating...."):
         # Generate the response
         response = model.generate_content(prompt_parts)
         # Write results
