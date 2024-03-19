@@ -73,7 +73,7 @@ h3 {
     justify-content: center;
 }
 </style>
-<h3 style="color: black;">Spark Your Blogging Brilliance with a Few Clicks!💥</h3>
+<h3 style="text-align: center; color: black; font-weight: 300; font-style: italic;">🎨&nbsp;&nbsp;Spark Your Blogging Brilliance with a Few Clicks!c&nbsp;&nbsp;💥</h3>
 ''', unsafe_allow_html=True)
 
 # sidebar for the user input
