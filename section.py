@@ -106,10 +106,13 @@ with st.sidebar:
     subpoints = st.text_area("Subpoints (comma-separated)")
     
     # Add the Voice Tones
-    voice_tones = st.sidebar.selectbox("Choose Voice Tones:", ["Formal","Friendly", "Bold", "Adventurous", "Witty", "Professional", "Casual", "Informative", "Creative", "Trendy", "Caring", "Cheerful", "Futuristic"])
+    voice_tones = st.sidebar.selectbox("Choose Voice Tones:", ["Formal", "Informal", "Friendly", "Bold", "Adventurous", "Witty", "Professional", "Casual", "Informative", "Creative", "Trendy", "Caring", "Cheerful", "Excited", "Funny", "Sad", "Serious", "Tense", "Vulnerable", "Angry", "Surprised", "Worried", "Assertive", "Confident", "Cooperative", "Encouraging" ])
     
     # Add the Writing Styles
-    writing_styles = st.sidebar.selectbox("Choose Writing Styles:", ["Academic", "Conversational", "Creative", "Critical", "Descriptive", "Instructive", "Technical", "Analytical"])
+    writing_styles = st.sidebar.selectbox("Choose Writing Styles:", ["Academic", "Conversational", "Creative", "Critical", "Descriptive", "Instructive", "Technical", "Analytical","Business", "Causal", "Emotional", "Expository", "Formal", "Informal", "Legal", "Medical", "Poetic", "Persuasive"])
+    
+    # Audience
+    audience = st.selectbox("Audience: Who is the target audience?", ["Teenager", "Adult", "20-years-old", "30-years-old",  "40-years-old", "50-years-old", "Senior", "Everyone", "Uninformed Audience", "Neutral Audience", "Business Audience", "Researcher", "Expert Audience", "My Boss", "My Student", "My Teacher", "My Family", "My Friends", "My Colleagues"] )
     
     num_words = st.number_input("Number of words", min_value=250, max_value=3000, step=50)
 
@@ -128,7 +131,7 @@ with st.sidebar:
             Please ignore all previous instructions. I want you to respond only in English. I want you to act as a highly skilled marketer and top-tier copywriter who is fluent in English. I want you to pretend that you are an expert at writing all types of CTAs in English. Write an section for the blog post about {section_heading}. Subpoint or supporting detail: {subpoints}(optional).
             Follow these instructions:
             1. You have a {voice_tones} tone of voice. 
-            2. You have a {writing_styles} writing style. I want you to write around {num_words} words. 
+            2. You have a {writing_styles} writing style. Targeted audience is {audience}. I want you to write around {num_words} words. 
             3. Mentions the number of words in the end of response.
             3. Avoiding jargon and complex terms.
             4. Write like a human.
