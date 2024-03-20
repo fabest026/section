@@ -134,7 +134,7 @@ with st.sidebar:
             2. You have a {writing_styles} writing style. Targeted audience is {audience}. I want you to write around {num_words} words. 
             3. Mentions the number of words in the end of response.
             3. Avoiding jargon and complex terms.
-            4. Write like a human.
+            4. Write in easy to understand style. Don't use difficult to read and synmonstic language. Write likehood a human writer.
             5. Focus first on creating high quality, thorough content that provides value to readers. 
             6. Improve scannability with headings, bullet points, lists, images, stats, and other visual elements where applicable.
             7. Keep paragraphs 3 sentences or less. Turn long sentences into two shorter ones.
@@ -146,7 +146,6 @@ with st.sidebar:
             13. Make sure that you don't follow ai pattern but article should be really simple and it should make sense. 
             14. Make sure to add a bit of humor and add some funny lines. Also add bold and italic
             15. write the information in your own words rather than copying and pasting from other sources also double-check for plagiarism because I need pure unique content
-            
             """
             ]
 
